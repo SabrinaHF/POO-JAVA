@@ -22,12 +22,15 @@ public class Matematica {
 
     public int Menu() {
 
-        switch (opcao) {
-            case 1: return Somar();
-            case 2: return Subtrair();
-            case 3: return Multiplicar();
-            case 4: return Dividir();
-            default: return 0;
+        return switch (opcao) {
+            case 1 -> Somar();
+            case 2 -> Subtrair();
+            case 3 -> Multiplicar();
+            case 4 -> Dividir();
+            default -> {
+                System.out.println("Opção inválida!");
+                yield 0;
+            }
         }
     }
 }
