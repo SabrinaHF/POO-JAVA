@@ -31,6 +31,6 @@ public class Matematica {
                 System.out.println("Opção inválida!");
                 yield 0;
             }
-        };
+        }
     }
 }
