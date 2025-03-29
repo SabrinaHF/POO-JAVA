@@ -5,16 +5,7 @@ import java.util.Scanner;
 public class Conta {
 
     String titular;
-    double saldo;
-
-    public Conta(String titular, double saldo) {
-        this.saldo = 0.0;
-        this.titular = titular;
-    }
-
-    public Conta() {
-
-    }
+    double saldo = 0.0;
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
@@ -41,7 +32,7 @@ public class Conta {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe o valor do depósito: ");
+        System.out.print("Informe o valor do depósito: ");
         double deposito = sc.nextDouble();
         this.setSaldo(this.getSaldo() + deposito);
         consultaSaldo();
@@ -51,7 +42,7 @@ public class Conta {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe o valor do saque: ");
+        System.out.print("Informe o valor do saque: ");
         double saque = sc.nextDouble();
         this.setSaldo(this.getSaldo() - saque);
         consultaSaldo();
@@ -61,7 +52,7 @@ public class Conta {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe o valor da tranferência: ");
+        System.out.print("Informe o valor da tranferência: ");
         double transferencia = sc.nextDouble();
         this.setSaldo(this.getSaldo() - transferencia);
         consultaSaldo();

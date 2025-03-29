@@ -8,6 +8,7 @@ public class ContaMain {
 
         Conta conta = new Conta();
         Scanner sc = new Scanner(System.in);
+        int op;
 
         do{
             System.out.println(">>>> Menu Principal <<<<");
@@ -16,7 +17,8 @@ public class ContaMain {
             System.out.println("3. Sacar");
             System.out.println("4. Transferir");
             System.out.println("5. Finalizar operação");
-            int op = sc.nextInt();
+            System.out.print("> Informe a opção desejada: ");
+            op = sc.nextInt();
 
             switch(op){
                 case 1:
@@ -33,10 +35,11 @@ public class ContaMain {
                     break;
                 case 5:
                     System.out.println("Operação finalizada com sucesso.");
-                default:
-                    System.out.println("Opção inválida. Digite uma opção válida.");
                     break;
-            }while(op != 5);
-        }
+                default:
+                    System.out.println(">Opção inválida. Digite uma opção válida.");
+                    break;
+            }
+        }while(op!= 5);
     }
 }
