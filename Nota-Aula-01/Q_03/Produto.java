@@ -8,6 +8,15 @@ public class Produto {
     private double preco;
     private int qtd_estoque;
 
+    public Produto(String nome, double preco, int qtd_estoque) {
+        this.nome = nome;
+        this.preco = preco;
+        this.qtd_estoque = qtd_estoque;
+    }
+
+    public Produto() {
+
+    }
 
     public void setNome(String nome) {
 
@@ -63,9 +72,6 @@ public class Produto {
         Scanner sc = new Scanner(System.in);
 
         System.out.println(">> VENDA <<");
-
-        System.out.print("- Informe o nome do produto: ");
-        String nome_produto = sc.nextLine();
 
         System.out.print("- Informe a quantidade desejada: ");
         int quantidade = sc.nextInt();
