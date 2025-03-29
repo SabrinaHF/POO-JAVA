@@ -120,7 +120,7 @@ public class Produto {
             int resposta = sc.nextInt();
             sc.nextLine();
 
-            double pagamento = total;
+            double pagamento;
 
             if (resposta == 5) {
                 pagamento = total / 3;

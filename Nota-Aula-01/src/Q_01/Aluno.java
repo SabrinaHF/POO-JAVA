@@ -9,14 +9,16 @@ public class Aluno {
         return (nota1+nota2+nota3)/3;
     }
 
-    public void Situacao() {
+    public String Situacao() {
 
-        if(Media()>=70){
-            System.out.println("Aluno aprovado!");
-        }else if(Media()<40){
-            System.out.println("Aluno reprovado!");
+        int media = Media();
+
+        if(media>=70){
+            return "Aluno aprovado!";
+        }else if(media<40){
+            return "Aluno reprovado!";
         }else{
-            System.out.println("Aluno está na final!");
+            return "Aluno está na final!";
         }
     }
 }
