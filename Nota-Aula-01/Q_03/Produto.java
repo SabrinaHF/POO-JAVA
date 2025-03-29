@@ -19,7 +19,7 @@ public class Produto {
         this.preco = preco;
     }
 
-    public void setQtd_estoque(int qtd_estoque) {
+    public void setQtd_Estoque(int qtd_estoque) {
 
         this.qtd_estoque = qtd_estoque;
     }
@@ -34,7 +34,7 @@ public class Produto {
         return preco;
     }
 
-    public int getQtd_estoque() {
+    public int getQtd_Estoque() {
 
         return qtd_estoque;
     }
@@ -51,7 +51,9 @@ public class Produto {
         setPreco(sc.nextDouble());
         System.out.print("- Informe a quantidade: ");
         int quantidade = sc.nextInt();
-        setQtd_estoque(quantidade);
+        sc.nextLine();
+
+        setQtd_Estoque(quantidade+getQtd_Estoque());
 
         System.out.println(">>Produto adicionado com sucesso!<<");
     }
@@ -65,16 +67,17 @@ public class Produto {
         System.out.print("- Informe o nome do produto: ");
         String nome_produto = sc.nextLine();
 
-        System.out.print("- Informe a quantidade: ");
+        System.out.print("- Informe a quantidade desejada: ");
         int quantidade = sc.nextInt();
+        sc.nextLine();
 
-        if (quantidade > getQtd_estoque()) {
+        if (quantidade > getQtd_Estoque()) {
             System.out.println("Produto fora de estoque!");
             return;
         }
 
         double total = quantidade * preco;
-        qtd_estoque -= quantidade;
+        setQtd_Estoque(getQtd_Estoque() - quantidade);
 
         System.out.printf("- Valor da venda: R$ %.2f%n", total);
         System.out.println(">>Venda realizada com sucesso!<<");
@@ -86,7 +89,7 @@ public class Produto {
         System.out.println(">> ESTOQUE <<");
         System.out.println("Produto: " + getNome());
         System.out.printf("Preço: R$ %.2f%n", getPreco());
-        System.out.printf("Quantidade: %d%n", getQtd_estoque());
+        System.out.printf("Quantidade: %d%n", getQtd_Estoque());
         System.out.println("----------");
     }
 
